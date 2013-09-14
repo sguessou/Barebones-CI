@@ -18,7 +18,22 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	define('ENVIRONMENT', 'development');
+	//var_dump($_SERVER);
+	//define('ENVIRONMENT', 'development');
+
+	switch ($_SERVER['HTTP_HOST'])
+	{
+		case 'bare_ci.dev':
+			$env = 'development';
+		break;
+	
+		default:
+			$env = 'production';
+		break;
+	}
+
+	define('ENVIRONMENT', $env);
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
