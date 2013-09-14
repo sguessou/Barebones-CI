@@ -1,0 +1,3 @@
+This is a CodeIgniter framework barebones setup. The directives for this setup are all inspired from the 
+ingenious screencast by Joost Van Veen (CodeIgniter Best Practices) that can be found in tuts+ premium (https://tutsplus.com/).
+The end result will be a setup where you can use third parties libraries through sparks & composer, an extended controller & model class, and some interesting stuff. This setup will function as a basis for future apps.  
