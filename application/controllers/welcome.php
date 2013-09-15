@@ -6,6 +6,7 @@ class Welcome extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 
+		$this->ion_auth->login('admin@admin.com', 'password');
 		
 		if ($this->ion_auth->logged_in() == false) {
 			redirect('user/login');
@@ -29,6 +30,13 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->benchmark->mark('ionAuth_start');
+		$user = $this->ion_auth->user()->row();
+		$this->benchmark->mark('ionAuth_end');
+
+		dump($user);
+
+		$this->output->enable_profiler(ENVIRONMENT == 'development');
 		$this->load->view('welcome_message');
 	}
 }

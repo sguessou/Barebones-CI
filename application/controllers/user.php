@@ -9,6 +9,7 @@ class  User extends CI_Controller {
 
 	public function login()
 	{
-		echo 'login form';
+		echo 'login form<br />';
+		var_dump($this->ion_auth->user()->row());
 	}
 }
